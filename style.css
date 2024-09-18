@@ -19,6 +19,82 @@ body {
   overflow: hidden;
   perspective: 1000px;
 }
+
+.formulario {
+  font-family: Arial, sans-serif;
+
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  text-align: center;
+}
+input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.neon {
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+@keyframes neon {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,
+      0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px #ff00de,
+      0 0 17.5px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37.5px #ff00de;
+  }
+}
+#result {
+  font-size: 48px;
+  text-align: center;
+  display: none;
+}
+.heart2 {
+  color: red;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.mensaje {
+  
+  position: absolute;
+  display: flex;
+  bottom: 40vmin;
+  right: -8ch;
+  transform-origin: bottom center;
+  z-index: 1000;
+  --fl-speed: 0.8s;
+  
+}
+.mensaje span{
+  font-size: 50px;
+}
+.mensaje p{
+  font-size: 100px;
+}
+
 .night {
   position: fixed;
   left: 50%;

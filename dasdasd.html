@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Neón</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .neon {
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes neon {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+            }
+            to {
+                text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px #ff00de, 0 0 17.5px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37.5px #ff00de;
+            }
+        }
+        #result {
+            font-size: 48px;
+            text-align: center;
+            display: none;
+        }
+        .heart2 {
+            color: red;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="nameForm">
+            <label for="name" class="neon">Escribe tu nombre:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <div id="result"></div>
+
+    <div class="mensaje">
+        <span class="heart2">❤️</span>${name}<span class="heart2">❤️</span>
+    </div>
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            document.querySelector('.form-container').style.display = 'none';
+            const result = document.getElementById('result');
+            result.innerHTML = `<span class="heart2">❤️</span>${name}<span class="heart2">❤️</span> `;
+            result.style.display = 'block';
+            result.classList.add('neon');
+        });
+    </script>
+</body>
+</html>
